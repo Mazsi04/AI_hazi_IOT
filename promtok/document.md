@@ -27,8 +27,8 @@ Győződj meg arról, hogy az összes fenti könyvtár telepítve van az Arduino
 #include <DHT.h>
 
 // WiFi beállítások
-const char* ssid = "fhazinet300";
-const char* password = "Mazsola04";
+const char* ssid = "your_SSID";
+const char* password = "your_PASSWORD";
 
 // SSD1306 OLED kijelző méret
 #define SCREEN_WIDTH 128
