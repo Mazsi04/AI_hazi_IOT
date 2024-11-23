@@ -136,3 +136,6 @@ void loop() {
 
   delay(2000); // 2 másodperces késleltetés
 }
+```
+Megjegyzés:
+Kérlek, cseréld le a your_SSID és your_PASSWORD értékeket a WiFi hálózatod nevére és jelszavára. Ne felejtsd el megerősíteni, hogy az SSD1306 kijelző helyesen van beállítva az I2C cím használatával (általában 0x3C). Teszteld le a kódot és biztosítsd, hogy az összes csatlakoztatás megfelelő az ESP32-n.
