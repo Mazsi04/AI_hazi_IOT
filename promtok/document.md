@@ -1,18 +1,25 @@
-# Projekt Dokumentáció
+# Projekt: Hőmérséklet és Páratartalom Kijelzés DHT11 Érzékelővel és Web Szerverrel
 
-Az alábbi dokumentumban bemutatom az ESP32 mikrokontrollerre írt kódot, amely a DHT11 szenzorról olvasott hőmérséklet- és páratartalom-értékeket megjeleníti egy SSD1306 kijelzőn. Továbbá, a program egy web szervert is futtat, amely lehetővé teszi egy LED ki- és bekapcsolását.
+**Rendszer:**  
+Te egy magyar nyelvű professzionális IOT asszisztens vagy. A szoftverek, amiket ismersz és használsz, ESP32 környezethez Arduino IDE. A kapott feladatokat Nodemcu ESP32s mikrokontrolleren valósítod meg. Az Arduino IDE Adafruit könyvtárakat tudod használni. A kijelző, amit tudsz használni, SSD1306, ami I2C-vel tud működni. Tudnod kell a portokat beállítani, és úgy csinálni, hogy azokon a lábakon működjön. Web szervert is tudsz felhúzni az eszközre.
 
-## Résztvevők
+**Felhasználó:**  
+Írj egy programot, ami a kijelzőre kiírja a hőmérsékletet és a páratartalmat, amit a DHT11-ből olvas ki. A kijelző pinjei GPIO21 és GPIO22. A LED a GPIO5-ös pin, a DHT11 pedig a GPIO4-es. A program feladata még az, hogy egy web szerveren megjelenítse a kiolvasott értékeket, és amelyik GPIO-n lévő LED-et ki és be lehessen kapcsolni a web szerveren. A web szerver szöveg megjelenítésében ne használj ékezetes betűket.
 
-**System:** Te egy magyar nyelvű professzionális IoT asszisztens vagy, aki ESP32 környezetben Arduino IDE használatával tud megfelelő kódot generálni.
+**IOT Design Assistant:**  
+Az alábbiakban bemutatok egy példakódot, amely az ESP32-re írt programot tartalmazza. A program kiolvassa a hőmérsékletet és páratartalmat a DHT11 szenzorból, majd megjeleníti ezeket az adatokat egy SSD1306 kijelzőn. Ezen kívül a program egy web szervert is indít, amely lehetővé teszi a GPIO 5-ös pinre kötött LED ki- és bekapcsolását. Figyeltem arra, hogy a kód ne használjon ékezetes betűket a webes felületen.
 
-**User:** Írj egy programot, amely a kijelzőre kiírja a hőmérsékletet és a páratartalmat a DHT11 szenzorból, és egy web szerveren is megjeleníti az adatokat. A programnak lehetővé kell tennie a LED ki- és bekapcsolását a web szerveren keresztül.
+A szükséges könyvtárak:
 
-**Assistant:** Az alábbiakban bemutatok egy példakódot a kért funkciókkal. Az adatokat a DHT11 szenzor olvassa ki, a kijelzés az SSD1306 kijelzőn történik, és egy web szerver teszi lehetővé a LED vezérlését.
+- **Adafruit Unified Sensor Library**
+- **Adafruit DHT Sensor Library**
+- **Adafruit SSD1306 Library**
 
-## Kód
+Győződj meg arról, hogy az összes fenti könyvtár telepítve van az Arduino IDE-ben.
 
-```c
+### Kód:
+
+```cpp
 #include <WiFi.h>
 #include <Wire.h>
 #include <Adafruit_Sensor.h>
